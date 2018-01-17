@@ -20,11 +20,10 @@ def get_EDA_info(filename):
   print("Tail")
   print(df.tail())
   print("---------------")
-  # Count and print null values
-  print("Total Missing Values: " + df.isnull().sum())
-  print("---------------")
   # Print df info  
   print("Info")
   print(df.info())
   print("---------------")
-
+  # Count and print null values
+  print("Total Missing Values: " + df.isnull().sum())
+  print("---------------")
