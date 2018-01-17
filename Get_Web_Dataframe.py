@@ -1,3 +1,6 @@
+import pandas as pd
+from urllib.request import urlretrieve
+
 def get_web_dataframe(url, filename, sep, skip, header):
     # Save file as local
     urlretrieve(url, filename)
