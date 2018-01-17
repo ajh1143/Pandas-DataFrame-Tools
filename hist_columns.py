@@ -9,7 +9,9 @@ def hist_columns(df, log, rot, *args):
     for arg in args:
         if log == "True":
             df[arg].plot(kind='hist', logx=True, logy=True, rot=rot)
+            plt.xlabel(str(arg))
             plt.show()
         else:
             df[arg].plot(kind='hist', logx=False, logy=False, rot=rot)
+            plt.xlabel(str(arg))
             plt.show()
