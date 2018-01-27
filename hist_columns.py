@@ -1,8 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#Input a dataframe, a single column name, a list of col names, or multiple arguments to retrieve
-#histogram plots for each. Define log as True or False to use log axes, and define rotation
+#--------------------
+#Language: Python
+#Function: hist_columns()
+#Purpose: Easily generate a Histogram pyplot from a DataFrame and list of columns 
+#Inputs: Pandas DataFrame, Log condition(T/F), Rotation value, single or variable column names
+#Outputs: Histogram plots of given column in Pandas DataFrame
+#--------------------
 
 def hist_columns(df, log, rot, *args):
     # For each column name given, check if log axes chosen, plot histogram
