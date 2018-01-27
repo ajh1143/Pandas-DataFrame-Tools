@@ -1,5 +1,13 @@
 import pandas as pd 
 
+#--------------------
+#Language: Python
+#Function: get_EDA_info()
+#Purpose: Generates a series of Exploratory Data Analysis (EDA) sets from a given CSV file
+#Inputs: CSV file
+#Outputs: Basic EDA information for analysis
+#--------------------
+
 def get_EDA_info(filename):
   # Load DataFrame as df
   csv = pd.read_csv(filename)
