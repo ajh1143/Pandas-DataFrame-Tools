@@ -7,7 +7,9 @@
 #--------------------
 
 def replace_with_mean(df, colname):
+    #Generate mean values of specified column
     col_mean = np.mean(df[colname])
+    #Add mean values to DataFrame.colname
     df[colname] = df[colname].fillna(col_mean)
     print(df.info())
     return df
@@ -21,6 +23,7 @@ def replace_with_mean(df, colname):
 #--------------------
 
 def check_missing_data(df):
+    #Test assertion of null values
     assert pd.notnull(df).all().all()
 
        
@@ -34,9 +37,14 @@ def check_missing_data(df):
     
 #DROP DUPLICATES FROM A DEFINED COLUMN = cols OF DATAFRAME = df
 def drop_dups(df, cols):
+    #Generate a pre-processed representation of specified column
     pre_col =  pd.DataFrame(df[cols])
+    #Check column info
     print(pre_col.info())
+    #Drop any duplicate rows within pre_col
     post_col = pre_col.drop_duplicates()
+    #Check if successful
     print(post_col.info())
+    #Return the processed DataFrame
     return post_col
 
