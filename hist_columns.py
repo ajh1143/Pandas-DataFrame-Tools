@@ -12,11 +12,19 @@ import matplotlib.pyplot as plt
 def hist_columns(df, log, rot, *args):
     # For each column name given, check if log axes chosen, plot histogram
     for arg in args:
+        #Check if user passed a logarithmic scale designation
         if log == "True":
+            #Create Histogram plot
             df[arg].plot(kind='hist', logx=True, logy=True, rot=rot)
+            #Add x-axis label
             plt.xlabel(str(arg))
+            #Show plot
             plt.show()
+        #No log scale specified
         else:
+            #Create Histogram plot
             df[arg].plot(kind='hist', logx=False, logy=False, rot=rot)
+            #Add x-axis label
             plt.xlabel(str(arg))
+            #Show plot
             plt.show()
