@@ -10,10 +10,16 @@
 #--------------------
 
 def make_timeseries(df, x, y, xlab, ylab, gtitle):
+    #Generate a line plot
     df.plot(kind='line', x=x, y=y)
+    #Add X&Y axis labels
     plt.xlabel(xlab)
     plt.ylabel(ylab)
+    #Add graph title
     plt.title(gtitle)
+    #Add Legend in position 1
     plt.legend(loc=1)
+    #Add gridlines to graph
     plt.grid()
+    #Show plot
     plt.show()
