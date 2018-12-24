@@ -1,6 +1,6 @@
 # Pandas DataFrame Tools
 Pandas DF related tools for acquisition, parsing, plotting etc
-
+_______________________________________________________________________________________________________________________________________
 ## Create Custom Data Types    
 Generate new categorical data tyoes, option for ordered values. 
 
@@ -24,6 +24,7 @@ def categorical_datatype(levels, ordered):
             return category_name
 ```
 
+_______________________________________________________________________________________________________________________________________
 ## Sorting Indexes    
 Sort indexes of multiindex array. Native solution `sort_index(by='attribute')` currently deprecated. 
 ```Python3
@@ -38,6 +39,7 @@ def sort_mixed_dtypes(df, indexes):
     """
     return df.reset_index().set_index(indexes).sort_index()
 ```
+_______________________________________________________________________________________________________________________________________
 
 ## Concatenate    
 Combine a list of dataframes into single unit, display head and shape. 
@@ -50,8 +52,10 @@ def concat(df_list):
     return df_output
 ```
 
-# Data Integrity
+_______________________________________________________________________________________________________________________________________
+## Data Integrity
 
+### Impute NaN With Mean
 Replace NaN observations in specified column with mean of populated column
 ```Python3
 def replace_with_mean(df, colname):
@@ -63,6 +67,7 @@ def replace_with_mean(df, colname):
     return df
 ```
 
+### Assert Missing
 Test if dataframe has missing data via Assert statement
 ```Python3
 def check_missing_data(df):
@@ -71,7 +76,7 @@ def check_missing_data(df):
 ```
        
 
-    
+### Remove Duplicate Entries    
 Drop duplicates
 ```Python3
 def drop_dups(df, cols):
@@ -87,7 +92,10 @@ def drop_dups(df, cols):
     return post_col
 ```
 
-## Many-To-Many Merger
+_______________________________________________________________________________________________________________________________________
+## Merge
+
+### Many-To-Many 
 ```Python3
 def merge_many(t1, t2, t3,  t1_left, t2_right, t3_left, tkey_right):
     #Merge T1 and T2 into first_merge table
@@ -98,6 +106,7 @@ def merge_many(t1, t2, t3,  t1_left, t2_right, t3_left, tkey_right):
     return second_merge
 ```
 
+_______________________________________________________________________________________________________________________________________
 ## Plotting
 ### Histogram
 ```Python3
@@ -172,3 +181,5 @@ def make_timeseries(df, x, y, xlab, ylab, gtitle):
     #Show plot
     plt.show()
 ```
+
+_______________________________________________________________________________________________________________________________________
